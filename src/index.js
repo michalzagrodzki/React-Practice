@@ -1,25 +1,31 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { routes } from "./routes";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          {routes.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              component={route.component}
-            />
-          ))}
-        </Switch>
-      </Suspense>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+        <Router>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              ))}
+            </Switch>
+          </Suspense>
+        </Router>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
