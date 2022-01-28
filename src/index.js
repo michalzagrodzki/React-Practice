@@ -1,23 +1,23 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
+        <Routes>
           {routes.map((route, index) => (
             <Route
               key={index}
               path={route.path}
               exact={route.exact}
-              component={route.component}
+              element={route.component}
             />
           ))}
-        </Switch>
+        </Routes>
       </Suspense>
     </Router>
   </React.StrictMode>,

@@ -1,15 +1,16 @@
 
 import React from "react";
 import Home from "./Routes/Home";
+import Exercise from "./Routes/Exercise";
 
 export const routes = [
   {
     path: "/",
     exact: true,
-    component: Home,
+    component: <Home />
   },
   {
     path: "/exercise/:name",
-    component: React.lazy(() => import("./Routes/Exercise")),
+    component: <Exercise />
   },
 ];
