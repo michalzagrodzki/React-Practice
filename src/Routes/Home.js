@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "./../components/header";
 import Card from "./../components/card";
 import Empty from "./../components/empty"
 import list from "./../Data/index"
@@ -11,7 +12,10 @@ export default function Home() {
   
   return (
     <div>
-      <h1>Welcome to react exercises</h1>
+      <Header 
+        title={"React exercises"}
+        caption={"simple examples how to use react features"}
+      />
       {
         exerciseLinks.length > 0 &&
         exerciseLinks.map((link, index) => {
@@ -22,8 +26,8 @@ export default function Home() {
             content={link.description} 
             link={link.link} 
           />
-        )
-      })}
+        )})
+      }
       {
         exerciseLinks.length === 0 &&
         <Empty message={"No links available"} />
