@@ -6,7 +6,7 @@ export default function Exercise() {
   const ComponentName = "usestate";
   const [exerciseTitle, setExerciseTitle] = useState("This is react exercise");
   const [exerciseCodeString, setExerciseCodeString] = useState("");
-  const [ExerciseComponent, setExerciseComponent] = useState(lazy(() => import(`./../Exercises/${ComponentName}`)));
+  const [ExerciseComponent, setExerciseComponent] = useState(lazy(() => import(`./../Exercises/empty`)));
   
   useEffect(() => {
     setExerciseTitle("This is react exercise");
