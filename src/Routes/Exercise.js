@@ -11,11 +11,13 @@ export default function Exercise() {
   const { name } = useParams();
   const exercise = ExercisesData[name];
   const [exerciseTitle, setExerciseTitle] = useState("");
+  const [exerciseCaption, setExerciseCaption] = useState("");
   const [exerciseCodeString, setExerciseCodeString] = useState("");
   const [ExerciseComponent, setExerciseComponent] = useState(lazy(() => import(`./../Exercises/empty`)));
   
   useEffect(() => {
     setExerciseTitle(exercise.title);
+    setExerciseCaption(exercise.description)
     setExerciseCodeString(exercise.codeString);
     setExerciseComponent(lazy(() => import(`./../Exercises/${exercise.componentName}`)));
   }, []);
@@ -23,6 +25,7 @@ export default function Exercise() {
   return (
     <div>
       <h1>{ exerciseTitle }</h1>
+      <p>{ exerciseCaption }</p>
       <SyntaxHighlighter 
         language="javascript" 
         style={atomOneDark}
