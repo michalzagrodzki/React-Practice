@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Header from "./../components/header";
 import Card from "./../components/card";
 import Empty from "./../components/empty"
-import list from "./../Data/index"
+import ExercisesList from "./../Data/exercisesList"
 
 export default function Home() {
   const [exerciseLinks, setExerciseLinks] = useState([]);
   useEffect(() => {
-    setExerciseLinks(list)
+    setExerciseLinks(ExercisesList)
   }, []);
   
   return (
