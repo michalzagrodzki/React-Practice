@@ -26,7 +26,7 @@ export default function Exercise() {
     <div>
       <h1>{ exerciseTitle }</h1>
       <p>{ exerciseCaption }</p>
-      <SyntaxHighlighter 
+      <SyntaxHighlighter
         language="javascript" 
         style={atomOneDark}
       >
