@@ -1,10 +1,8 @@
-import React from "react";
+import React, {lazy} from "react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import JsxParser from 'react-jsx-parser'
 
 export default function Exercise() {
-
   const codeString = `function Exercise() {
     return (
       <div>
@@ -12,10 +10,8 @@ export default function Exercise() {
       </div>
     );
   }`
-
-  const codeBlock = `<div>
-    <h1>This is react example</h1>
-  </div>`
+  const ComponentName = "usestate";
+  const ExerciseComponent = lazy(() => import(`./../Exercises/${ComponentName}`));
 
   return (
     <div>
@@ -23,9 +19,7 @@ export default function Exercise() {
       <SyntaxHighlighter language="javascript" style={atomOneDark}>
         {codeString}
       </SyntaxHighlighter>
-      <JsxParser
-        jsx={codeBlock}
-      />
+      <ExerciseComponent />
     </div>
   );
 }
