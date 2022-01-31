@@ -1,8 +1,11 @@
 import React, {lazy, useState, useEffect} from "react";
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useParams } from 'react-router-dom';
 import ExercisesData from './../Data/exercises';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
 
 export default function Exercise() {
   const { name } = useParams();
