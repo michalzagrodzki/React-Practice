@@ -1,10 +1,9 @@
 import React from "react";
 import { Grid, Container, Typography, Card, CardContent, CardActions, Button, CssBaseline, Box } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from "./../theme"
 
 export default function Home() {
-
-  const theme = createTheme();
   
   return (
     <ThemeProvider theme={theme}>
@@ -23,7 +22,7 @@ export default function Home() {
           container 
           spacing={0}
           alignItems="center"
-          width={1600}
+          maxWidth={1600}
         >
           <Grid item md={4}>
             <Container>
