@@ -1,122 +1,60 @@
-import React from "react";
-import { Grid, Container, Typography, Card, CardContent, CardActions, Button, CssBaseline, Box } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from "./../theme"
+import { Grid, Container, Box} from '@mui/material';
+import React, { useState, useEffect } from "react";
+import Header from "./../components/header";
+import ExerciseCard from "./../components/card";
+import Empty from "./../components/empty"
+import ExercisesList from "./../Data/exercisesList"
 
 export default function Home() {
+  const [exerciseLinks, setExerciseLinks] = useState([]);
+  useEffect(() => {
+    setExerciseLinks(ExercisesList)
+  }, []);
   
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box 
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent:'center',
-          alignItems: 'center',
-          height: "100vh",
-          backgroundColor: 'primary.dark',
-        }}
+    <Box 
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent:'center',
+        alignItems: 'center',
+        height: "100vh",
+        backgroundColor: 'primary.dark',
+      }}
+    >
+      <Grid 
+        container 
+        spacing={0}
+        alignItems="center"
+        maxWidth={1600}
       >
-        <Grid 
-          container 
-          spacing={0}
-          alignItems="center"
-          maxWidth={1600}
-        >
-          <Grid item md={4}>
-            <Container>
-              <Typography variant="h4" component="h1" gutterBottom>
-                React exercises
-              </Typography>
-              <Typography variant="h6" component="h4" gutterBottom>
-                Dive into react exerciess. See different approaches, use of libraries and methods.
-              </Typography>
-            </Container>
-          </Grid>
-          <Grid item md={8}>
-            <Container>
-              <Grid container spacing={2}>
-                <Grid item md={4}>
-                  <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                      <Typography variant="h5" component="div">
-                        Chat mockup
-                      </Typography>
-                      <Typography variant="body2">
-                        Structure for mockup chat with communication between components
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">Learn More</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item md={4}>
-                  <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                      <Typography variant="h5" component="div">
-                        Chat mockup
-                      </Typography>
-                      <Typography variant="body2">
-                        Structure for mockup chat with communication between components
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">Learn More</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item md={4}>
-                  <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                      <Typography variant="h5" component="div">
-                        Chat mockup
-                      </Typography>
-                      <Typography variant="body2">
-                        Structure for mockup chat with communication between components
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">Learn More</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item md={4}>
-                  <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                      <Typography variant="h5" component="div">
-                        Chat mockup
-                      </Typography>
-                      <Typography variant="body2">
-                        Structure for mockup chat with communication between components
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">Learn More</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item md={4}>
-                  <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                      <Typography variant="h5" component="div">
-                        Chat mockup
-                      </Typography>
-                      <Typography variant="body2">
-                        Structure for mockup chat with communication between components
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">Learn More</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              </Grid>
-            </Container>
-          </Grid>
+    <Header 
+      title={"React exercises"}
+      caption={"Dive into react exerciess. See different approaches, use of libraries and methods."}
+    />
+    <Grid item md={8}>
+      <Container>
+        <Grid container spacing={2}>
+          {
+            exerciseLinks.length > 0 &&
+            exerciseLinks.map((link, index) => {
+            return (
+              <ExerciseCard
+                key={index}
+                title={link.title} 
+                content={link.description} 
+                link={link.link} 
+              />
+            )})
+          }
+          {
+            exerciseLinks.length === 0 &&
+            <Empty message={"No links available"} />
+          }
         </Grid>
-      </Box>
-    </ThemeProvider>
+        </Container>
+      </Grid>
+      </Grid>
+    </Box>
   );
 }
