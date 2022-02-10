@@ -4,7 +4,7 @@ import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useParams } from 'react-router-dom';
 import { Grid, Box, Container, Typography, Card, CardContent} from '@mui/material';
-import ExercisesData from './../Data/exercises';
+import ExercisesData from '../Data/exercises';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 
@@ -14,7 +14,7 @@ export default function Exercise() {
   const [exerciseTitle, setExerciseTitle] = useState("");
   const [exerciseCaption, setExerciseCaption] = useState("");
   const [exerciseCodeString, setExerciseCodeString] = useState("");
-  const [ExerciseComponent, setExerciseComponent] = useState(lazy(() => import(`./../Exercises/empty`)));
+  const [ExerciseComponent, setExerciseComponent] = useState(lazy(() => import(`../Exercises/empty`)));
   
   useEffect(() => {
     setExerciseTitle(exercise.title);

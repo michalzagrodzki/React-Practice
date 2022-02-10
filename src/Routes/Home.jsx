@@ -1,9 +1,9 @@
 import { Grid, Container, Box} from '@mui/material';
 import React, { useState, useEffect } from "react";
-import Header from "./../components/header";
-import ExerciseCard from "./../components/card";
-import Empty from "./../components/empty"
-import ExercisesList from "./../Data/exercisesList"
+import Header from "../components/header";
+import ExerciseCard from "../components/card";
+import Empty from "../components/empty"
+import ExercisesList from "../Data/exercisesList"
 
 export default function Home() {
   const [exerciseLinks, setExerciseLinks] = useState([]);
