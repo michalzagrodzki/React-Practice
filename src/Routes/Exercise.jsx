@@ -59,7 +59,7 @@ export default function Exercise() {
         container 
         spacing={1}
         alignItems="center"
-        maxWidth={1600}
+        maxWidth={1200}
       >
         <Grid item md={6}>
           <Card>
