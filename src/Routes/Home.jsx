@@ -28,32 +28,32 @@ export default function Home() {
         alignItems="center"
         maxWidth={1600}
       >
-    <Header 
-      title={"React exercises"}
-      caption={"Dive into react exerciess. See different approaches, use of libraries and methods."}
-    />
-    <Grid item md={8}>
-      <Container>
-        <Grid container spacing={2}>
-          {
-            exerciseLinks.length > 0 &&
-            exerciseLinks.map((link, index) => {
-            return (
-              <ExerciseCard
-                key={index}
-                title={link.title} 
-                content={link.description} 
-                link={link.link} 
-              />
-            )})
-          }
-          {
-            exerciseLinks.length === 0 &&
-            <Empty message={"No links available"} />
-          }
+        <Header 
+          title={"React exercises"}
+          caption={"Dive into react exercises. See different approaches, use of libraries and methods."}
+        />
+        <Grid item md={8}>
+          <Container>
+            <Grid container spacing={2}>
+              {
+                exerciseLinks.length > 0 &&
+                exerciseLinks.map((link, index) => {
+                return (
+                  <ExerciseCard
+                    key={index}
+                    title={link.title} 
+                    content={link.description} 
+                    link={link.link} 
+                  />
+                )})
+              }
+              {
+                exerciseLinks.length === 0 &&
+                <Empty message={"No links available"} />
+              }
+            </Grid>
+          </Container>
         </Grid>
-        </Container>
-      </Grid>
       </Grid>
     </Box>
   );
