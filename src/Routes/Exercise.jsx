@@ -3,7 +3,7 @@ import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useParams } from 'react-router-dom';
-import { Grid, Box, Container, Typography, Card, CardContent} from '@mui/material';
+import { Grid, Box, Container, Typography, Card, CardContent, Chip} from '@mui/material';
 import ExercisesData from '../Data/exercises';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
@@ -22,7 +22,9 @@ export default function Exercise() {
     setExerciseCodeString(exercise.codeString);
     setExerciseComponent(lazy(() => import(`./../Exercises/${exercise.componentName}`)));
   }, []);
-  
+  const syntaxBoxStyles = {
+    margin: 0
+  }
   return (
     <Box 
       sx={{
@@ -58,11 +60,36 @@ export default function Exercise() {
       <Grid 
         container 
         spacing={1}
-        alignItems="center"
+        alignItems="stretch"
         maxWidth={1200}
       >
-        <Grid item md={6}>
-          <Card>
+        <Grid 
+          item 
+          md={6} 
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center" 
+          }}
+        >
+          <Chip 
+            sx={{
+              marginBottom: "-15px",
+              zIndex: "10",
+              backgroundColor: "white"
+            }} 
+            label="syntax" 
+            color="primary" 
+            variant="outlined"
+          />
+          <Card 
+            sx={{
+              borderColor: "white !important",
+              width: "100%",
+              boxShadow: 'rgb(0 0 0 / 10%) 0px 20px 25px, rgb(0 0 0 / 4%) 0px 10px 10px',
+              borderRadius: 2
+            }}
+          >
             <CardContent 
               sx={{
                 padding: "0px !important"
@@ -71,6 +98,7 @@ export default function Exercise() {
               <SyntaxHighlighter
                 language="javascript" 
                 style={atomOneDark}
+                customStyle={syntaxBoxStyles}
               >
                 { exerciseCodeString }
               </SyntaxHighlighter>
@@ -79,22 +107,39 @@ export default function Exercise() {
         </Grid>
         <Grid 
           item 
-          md={6}
+          md={6} 
           sx={{
-            height: "100%"
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center" 
           }}
         >
+          <Chip 
+            sx={{
+              marginBottom: "-15px",
+              zIndex: "10",
+              backgroundColor: "white"
+            }} 
+            label="render" 
+            color="primary" 
+            variant="outlined"
+          />
           <Card 
             sx={{
-              height: "100%"
+              height: "100%",
+              width: "100%",
+              marginTop: "3px",
+              boxShadow: 'rgb(0 0 0 / 10%) 0px 20px 25px, rgb(0 0 0 / 4%) 0px 10px 10px',
+              borderRadius: 2
             }}
           >
             <CardContent 
               sx={{
-                padding: "0px !important",
+                padding: "10px !important",
                 color: "white",
                 backgroundColor: 'primary.light',
-                height: "100%"
+                height: "100%",
+                h1: {margin: 0}
               }}
             >
               <ExerciseComponent />
