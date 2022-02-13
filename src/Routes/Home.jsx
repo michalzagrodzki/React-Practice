@@ -1,4 +1,5 @@
 import { Grid, Container, Box} from '@mui/material';
+import { lightBlue, blue } from '@mui/material/colors';
 import React, { useState, useEffect } from "react";
 import Header from "../components/header";
 import ExerciseCard from "../components/card";
@@ -19,7 +20,7 @@ export default function Home() {
         justifyContent:'center',
         alignItems: 'center',
         height: "100vh",
-        backgroundColor: 'primary.dark',
+        background: `linear-gradient(0.35turn, #015f92, #0a4260);`
       }}
     >
       <Grid 

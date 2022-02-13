@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Container, Typography } from '@mui/material';
+import { lightBlue } from '@mui/material/colors';
 
 export default function Header({ title, caption }) {
   return (
@@ -9,7 +10,9 @@ export default function Header({ title, caption }) {
           variant="h4" 
           component="h1" 
           gutterBottom 
-          sx={{color: "white"}}
+          sx={{background: `linear-gradient(to right, ${lightBlue[50]}, ${lightBlue[200]})`,
+            backgroundClip: "text",
+            textFillColor: "transparent"}}
         >
           { title }
         </Typography>

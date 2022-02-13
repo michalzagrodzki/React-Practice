@@ -15,7 +15,7 @@ export default function ExerciseCard({ title, content, link }) {
     <Card 
       sx={{
         minWidth: 275,
-        backgroundColor: "primary.dark",
+        backgroundColor: "transparent",
         borderColor: `${lightBlue[700]}`,
         boxShadow: 'rgb(0 0 0 / 10%) 0px 20px 25px, rgb(0 0 0 / 4%) 0px 10px 10px',
         borderRadius: 2
