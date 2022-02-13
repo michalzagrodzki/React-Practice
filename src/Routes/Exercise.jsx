@@ -4,6 +4,7 @@ import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useParams } from 'react-router-dom';
 import { Grid, Box, Container, Typography, Card, CardContent, Chip} from '@mui/material';
+import { lightBlue } from '@mui/material/colors';
 import ExercisesData from '../Data/exercises';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
@@ -84,11 +85,12 @@ export default function Exercise() {
           />
           <Card 
             sx={{
-              borderColor: "white !important",
+              borderColor: `${lightBlue[800]} !important`,
               width: "100%",
               boxShadow: 'rgb(0 0 0 / 10%) 0px 20px 25px, rgb(0 0 0 / 4%) 0px 10px 10px',
               borderRadius: 2
             }}
+            variant="outlined"
           >
             <CardContent 
               sx={{
@@ -126,18 +128,20 @@ export default function Exercise() {
           />
           <Card 
             sx={{
+              borderColor: `${lightBlue[600]} !important`,
               height: "100%",
               width: "100%",
               marginTop: "3px",
               boxShadow: 'rgb(0 0 0 / 10%) 0px 20px 25px, rgb(0 0 0 / 4%) 0px 10px 10px',
               borderRadius: 2
             }}
+            variant="outlined"
           >
             <CardContent 
               sx={{
                 padding: "10px !important",
                 color: "white",
-                backgroundColor: 'primary.light',
+                backgroundColor: `${lightBlue[700]}`,
                 height: "100%",
                 h1: {margin: 0}
               }}
