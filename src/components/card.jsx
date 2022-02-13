@@ -24,16 +24,27 @@ export default function ExerciseCard({ title, content, link }) {
       variant="outlined"
     >
       <CardContent>
-        <Typography variant="h5" component="div" sx={{color: `${grey[50]}`}}
+        <Typography 
+          variant="h5" 
+          component="div" 
+          sx={{color: `${grey[50]}`}}
         >
-          {title}
+          { title }
         </Typography>
-        <Typography variant="body2" sx={{color: `${lightBlue[100]}`}}>
-          {content}
+        <Typography 
+          variant="body2" 
+          sx={{color: `${lightBlue[100]}`}}
+        >
+          { content }
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" sx={{color: `${lightBlue[50]}`}}>Learn More</Button>
+        <Button 
+          size="small" 
+          sx={{color: `${lightBlue[50]}`}}
+        >
+          Learn More
+        </Button>
       </CardActions>
     </Card>
   )
