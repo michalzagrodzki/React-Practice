@@ -1,7 +1,7 @@
 import React, {lazy, useState, useEffect} from "react";
 import { useParams } from 'react-router-dom';
-import { Box } from '@mui/material';
 import ExercisesData from '../Data/exercises';
+import Layout from '../components/layout';
 import Header from '../components/exerciseHeader';
 import Body from '../components/exerciseBody';
 import Syntax from '../components/exerciseSyntax';
@@ -23,16 +23,7 @@ export default function Exercise() {
   }, []);
   const layoutWidth = 1200;
   return (
-    <Box 
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent:'center',
-        alignItems: 'center',
-        height: "100vh",
-        background: `linear-gradient(0.35turn, #015f92, #0a4260);`
-      }}
-    >
+    <Layout>
       <Header 
         title={exerciseTitle} 
         caption={exerciseCaption}
@@ -48,6 +39,6 @@ export default function Exercise() {
           component={ <ExerciseComponent /> }
         />
       </Body>
-    </Box>
+    </Layout>
   );
 }

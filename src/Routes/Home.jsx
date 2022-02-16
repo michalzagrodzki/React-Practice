@@ -1,5 +1,6 @@
-import { Grid, Container, Box} from '@mui/material';
+import { Grid, Container } from '@mui/material';
 import React, { useState, useEffect } from "react";
+import Layout from '../components/layout';
 import Header from "../components/header";
 import ExerciseCard from "../components/card";
 import Empty from "../components/empty"
@@ -12,17 +13,8 @@ export default function Home() {
   }, []);
   
   return (
-    <Box 
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent:'center',
-        alignItems: 'center',
-        height: "100vh",
-        background: `linear-gradient(0.35turn, #015f92, #0a4260);`
-      }}
-    >
-      <Grid 
+    <Layout>
+      <Grid
         container 
         spacing={0}
         alignItems="center"
@@ -55,6 +47,6 @@ export default function Home() {
           </Container>
         </Grid>
       </Grid>
-    </Box>
+    </Layout>
   );
 }
