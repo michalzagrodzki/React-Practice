@@ -1,5 +1,4 @@
 import { Grid, Container, Box} from '@mui/material';
-import { lightBlue, blue } from '@mui/material/colors';
 import React, { useState, useEffect } from "react";
 import Header from "../components/header";
 import ExerciseCard from "../components/card";

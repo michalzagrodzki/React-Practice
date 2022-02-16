@@ -34,7 +34,7 @@ export default function Exercise() {
         justifyContent:'center',
         alignItems: 'center',
         height: "100vh",
-        backgroundColor: 'primary.dark',
+        background: `linear-gradient(0.35turn, #015f92, #0a4260);`
       }}
     >
       <Container sx={{
