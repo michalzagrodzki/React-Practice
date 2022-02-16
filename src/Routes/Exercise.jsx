@@ -3,9 +3,10 @@ import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useParams } from 'react-router-dom';
-import { Grid, Box, Container, Typography, Card, CardContent, Chip} from '@mui/material';
+import { Grid, Box, Card, CardContent, Chip} from '@mui/material';
 import { lightBlue } from '@mui/material/colors';
 import ExercisesData from '../Data/exercises';
+import ExerciseHeader from '../components/exerciseHeader';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 
@@ -26,6 +27,7 @@ export default function Exercise() {
   const syntaxBoxStyles = {
     margin: 0
   }
+  const layoutWidth = 1200;
   return (
     <Box 
       sx={{
@@ -37,32 +39,16 @@ export default function Exercise() {
         background: `linear-gradient(0.35turn, #015f92, #0a4260);`
       }}
     >
-      <Container sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent:'center',
-        alignItems: 'center',
-      }}>
-        <Typography 
-          variant="h4" 
-          component="h1" 
-          gutterBottom sx={{color: "white"}}
-        >
-          { exerciseTitle }
-        </Typography>
-        <Typography 
-          variant="h6" 
-          component="h4" 
-          gutterBottom sx={{color: "white"}}
-        >
-          { exerciseCaption }
-        </Typography>
-      </Container>
+      <ExerciseHeader 
+        title={exerciseTitle} 
+        caption={exerciseCaption}
+        width={layoutWidth}
+      />
       <Grid 
         container 
         spacing={1}
         alignItems="stretch"
-        maxWidth={1200}
+        maxWidth={layoutWidth}
       >
         <Grid 
           item 
