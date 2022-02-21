@@ -13,6 +13,11 @@ const list = [
     title: "Wordslist",
     description: "useState hook listing words",
     link: "wordslist"
+  },
+  {
+    title: "Decrement",
+    description: "useState hooks with decrement",
+    link: "decrement"
   }
 ];
 export default list;
