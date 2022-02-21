@@ -23,6 +23,11 @@ const list = [
     title: "Input list",
     description: "useRef hooks in input field",
     link: "inputlist"
+  },
+  {
+    title: "Category Tasks",
+    description: "useState hooks in filtered list",
+    link: "categorytask"
   }
 ];
 export default list;
