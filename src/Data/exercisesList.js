@@ -18,6 +18,11 @@ const list = [
     title: "Decrement",
     description: "useState hooks with decrement",
     link: "decrement"
+  },
+  {
+    title: "Input list",
+    description: "useRef hooks in input field",
+    link: "inputlist"
   }
 ];
 export default list;
