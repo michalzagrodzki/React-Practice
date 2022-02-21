@@ -8,6 +8,11 @@ const list = [
     title: "useState increment hook",
     description: "useState hooks with increment",
     link: "usestatehook"
+  },
+  {
+    title: "Wordslist",
+    description: "useState hook listing words",
+    link: "wordslist"
   }
 ];
 export default list;
