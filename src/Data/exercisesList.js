@@ -1,7 +1,7 @@
 const list = [
   {
     title: "useState hooks",
-    description: "Presentation of useState hooks",
+    description: "Basic useState hook case",
     link: "usestate"
   },
   {

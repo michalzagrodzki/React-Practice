@@ -1,7 +1,7 @@
 const exercises = {
   "usestate": {
     title: "useState hooks",
-    description: "Presentation of useState hooks",
+    description: "Basic useState hook case",
     codeString: `function Exercise() {
       return (
         <div>
